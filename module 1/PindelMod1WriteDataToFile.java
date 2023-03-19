@@ -33,6 +33,7 @@ public class PindelMod1WriteDataToFile {
             outputWrite.writeObject(intRandomArray);
             outputWrite.writeObject(todaysDate);
             outputWrite.writeObject(doubleRandomArray);
+            System.out.println("Data has been written.");
         }
     }
 }
