@@ -8,7 +8,7 @@
 import java.io.*;
 import java.util.*;
 
-public class WriteDataToFile {
+public class PindelMod1WriteDataToFile {
     //Main method
     public static void main (String[] args) throws IOException {
         //Create array of 5 random integers between 1 and 10
