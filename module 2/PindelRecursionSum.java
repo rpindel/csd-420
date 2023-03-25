@@ -15,7 +15,9 @@ public class PindelRecursionSum {
         
         try {
             double i = input.nextInt();
-            System.out.println("The sum of your fractions in double form is " + sum(i));
+            System.out.println("");
+            System.out.println("\nThe sum of your fractions in double form is " + sum(i) + ".");
+            System.out.println("");
         }
         catch(Exception e) {
             System.out.println("<< Invalid value type entered >>");
@@ -28,11 +30,11 @@ public class PindelRecursionSum {
     //Recursive method
     public static double sum(double i) {
         if (i > 1) {
-            //System.out.println("Rec n = " + i);
+            System.out.println((int)i + "/" + (int)(i + 1) + " + ");
             return (i / (i + 1)) + sum(i - 1);
         }
         else {
-            //System.out.println("Base n = " + i);
+            System.out.println((int)i + "/" + (int)(i + 1) + " =");
             return (i / (i + 1));
         }
     }
