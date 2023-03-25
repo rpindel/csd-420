@@ -1,5 +1,5 @@
 /*Robin Pindel
- * Module 3 Recursin Sum Assignment
+ * Module 3 Recursion Sum Assignment
  * 3/24/2023
  * 
  * This application takes user input and recursively calculates the sum of 
