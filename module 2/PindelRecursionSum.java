@@ -18,6 +18,8 @@ public class PindelRecursionSum {
         + "1) down through 1 / 2.");
         System.out.println("Please enter an integer value for i greater than 0: ");
         
+        //Try block to catch exception caused by user not inputting an integer
+        //Outputs fraction sum total to console
         try {
             int i = input.nextInt();
             System.out.println("");
@@ -25,6 +27,7 @@ public class PindelRecursionSum {
             + fractionSum(i) + ".");
             System.out.println("");
         }
+        //User input exception handling
         catch(Exception e) {
             System.out.println("");
             System.out.println("<< Exception - Invalid value type entered >>");
@@ -38,10 +41,12 @@ public class PindelRecursionSum {
 
     //Recursive method
     public static double fractionSum(double i) {
+        //Recursive call for fraction sum total        
         if (i > 1) {
             System.out.println((int)i + " / " + (int)(i + 1) + " + ");
             return (i / (i + 1)) + fractionSum(i - 1);
         }
+        //Base case defintion
         else {
             System.out.println((int)i + " / " + (int)(i + 1) + " =");
             return (i / (i + 1));
