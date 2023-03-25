@@ -10,6 +10,7 @@ public class PindelRecursionSum {
     public static void main(String[] args) throws InputMismatchException {
         //Create scanner for user input
         Scanner input = new Scanner(System.in);
+        System.out.println("");
         System.out.println("Let's calculate the sum of fractions from i / i + i down through 1 / 2.");
         System.out.println("Please enter an integer value for i greater than 0: ");
         
@@ -30,11 +31,11 @@ public class PindelRecursionSum {
     //Recursive method
     public static double sum(double i) {
         if (i > 1) {
-            System.out.println((int)i + "/" + (int)(i + 1) + " + ");
+            System.out.println((int)i + " / " + (int)(i + 1) + " + ");
             return (i / (i + 1)) + sum(i - 1);
         }
         else {
-            System.out.println((int)i + "/" + (int)(i + 1) + " =");
+            System.out.println((int)i + " / " + (int)(i + 1) + " =");
             return (i / (i + 1));
         }
     }
