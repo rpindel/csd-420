@@ -17,53 +17,78 @@ import java.util.*;
 public class pindelLinkedListTraverse {
     // Main method
     public static void main(String[] args) {   
-        // Create ArrayList and store 50K integers
-        ArrayList<Integer> _50K = new ArrayList<>();
-        for (int i = 0; i < 50.000; i++) {
-            _50K.add(i);
+        // Create LinkedList and store 50K integers
+        /*
+        LinkedList<Integer> fiftyK = new LinkedList<>();
+        for (int i = 0; i < 50000; i++) {
+            fiftyK.add(i);
         }
 
-        // Traverse 50K ArrayList
-        long _50KStart;
-        long _50KEnd;
+        // Traverse 50K LinkedList
+        long fiftyKStartIterator;
+        long fiftyKEndIterator;
+        long fiftyKStartIndex;
+        long fiftyKEndIndex;
 
         // Iterator
-        _50KStart = Calendar.getInstance().getTimeInMillis();
-        Iterator<Integer> it_50K = _50K.iterator();
-        int a = it_50K.next();
-        _50KEnd = Calendar.getInstance().getTimeInMillis();
-        System.out.println("For each loop :: " + (_50KEnd - _50KStart) + " ms");
+        fiftyKStartIterator = Calendar.getInstance().getTimeInMillis();
+        Iterator<Integer> itFiftyK = fiftyK.iterator();
+        int a = itFiftyK.next();
+        fiftyKEndIterator = Calendar.getInstance().getTimeInMillis();
+        System.out.println("\n50K using Iterator: " + (fiftyKEndIterator - fiftyKStartIterator) + " ms");
+        System.out.println("Start: " + fiftyKStartIterator);
+        System.out.println("End: " + fiftyKEndIterator);
+        System.out.println("fiftyK.size(): " + fiftyK.size());
 
         // Get(index)
-        _50KStart = Calendar.getInstance().getTimeInMillis();
-        for (int i = 0; i < _50K.size(); i++) {
-            int b = _50K.get(i);
+        fiftyKStartIndex = Calendar.getInstance().getTimeInMillis();
+        for (int i = 0; i < fiftyK.size(); i++) {
+            int b = fiftyK.get(i);
         }
-        _50KEnd = Calendar.getInstance().getTimeInMillis();
-        System.out.println("For each loop :: " + (_50KEnd - _50KStart) + " ms");
+        fiftyKEndIndex = Calendar.getInstance().getTimeInMillis();
+        System.out.println("\n50K using get(index): " + (fiftyKEndIndex - fiftyKStartIndex) + " ms");
+        System.out.println("Start: " + fiftyKStartIndex);
+        System.out.println("End: " + fiftyKEndIndex);
+        System.out.println("fiftyK.size(): " + fiftyK.size());
+        System.out.println("index[0]: " + fiftyK.get(0));
+        System.out.println("index[end]: " + fiftyK.get(fiftyK.size() - 1));
+        */
 
-        // Create ArrayList and store 500K integers
-        ArrayList<Integer> _500K = new ArrayList<>();
-        for (int i = 0; i < 500.000; i++) {
-            _500K.add(i);
+        // Create LinkedList and store 500K integers
+        LinkedList<Integer> fiveHundredK = new LinkedList<>();
+        for (int i = 0; i < 500000; i++) {
+            fiveHundredK.add(i);
         }
 
-        // Traverse 500K ArrayList
-        long _500KStart;
-        long _500KEnd;
+        // Traverse 500K LinkedList
+        long fiveHundredKStartIterator;
+        long fiveHundredKEndIterator;
+        long fiveHundredKStartIndex;
+        long fiveHundredKEndIndex;
 
         // Iterator
-        _500KStart = Calendar.getInstance().getTimeInMillis();
-        Iterator<Integer> it_500K = _500K.iterator();
-        int c = it_500K.next();
-        _500KEnd = Calendar.getInstance().getTimeInMillis();
-        System.out.println("For each loop :: " + (_500KEnd - _500KStart) + " ms");
+        fiveHundredKStartIterator = Calendar.getInstance().getTimeInMillis();
+        Iterator<Integer> itFiveHundredK = fiveHundredK.iterator();
+        int c = itFiveHundredK.next();
+        fiveHundredKEndIterator = Calendar.getInstance().getTimeInMillis();
+        System.out.println("\n500K using Iterator: " + (fiveHundredKEndIterator - fiveHundredKStartIterator) + " ms");
+        System.out.println("Start: " + fiveHundredKStartIterator);
+        System.out.println("End: " + fiveHundredKEndIterator);
+        System.out.println("fiveHundredK.size(): " + fiveHundredK.size());
 
         // Get(index)
-        for (int i = 0; i < _500K.size(); i++) {
-            int d = _500K.get(i);
+        fiveHundredKStartIndex = Calendar.getInstance().getTimeInMillis();
+        for (int i = 0; i < fiveHundredK.size(); i++) {
+            //int d = fiveHundredK.get(i);
+            System.out.println(fiveHundredK.get(i));
         }
-        _500KEnd = Calendar.getInstance().getTimeInMillis();
-        System.out.println("For each loop :: " + (_500KEnd - _500KStart) + " ms");
+        fiveHundredKEndIndex = Calendar.getInstance().getTimeInMillis();
+        System.out.println("\n500K using get(index): " + (fiveHundredKEndIndex - fiveHundredKStartIndex) + " ms");
+        System.out.println("Start: " + fiveHundredKStartIndex);
+        System.out.println("End: " + fiveHundredKEndIndex);
+        System.out.println("fivehundred.size(): " + fiveHundredK.size());
+        System.out.println("index[0]: " + fiveHundredK.get(0));
+        System.out.println("index[end]: " + fiveHundredK.get(fiveHundredK.size() - 1));
+        System.out.println("");
     }
 }
