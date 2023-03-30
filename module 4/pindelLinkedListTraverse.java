@@ -2,7 +2,7 @@
  * Module 4 LinkedList Traverse Assignment
  * 3/30/2023
  * 
- * Thie program will store a large number of integer values and then 
+ * This program will store a large number of integer values and then 
  * traverse the collection using different methods.
  * 
  * Reference
@@ -18,31 +18,30 @@ public class pindelLinkedListTraverse {
     // Main method
     public static void main(String[] args) {   
         // Create LinkedList and store 50K integers
-        /*
         LinkedList<Integer> fiftyK = new LinkedList<>();
         for (int i = 0; i < 50000; i++) {
             fiftyK.add(i);
         }
 
-        // Traverse 50K LinkedList
+        // Traverse 50K LinkedList and output run time data to console
         long fiftyKStartIterator;
         long fiftyKEndIterator;
         long fiftyKStartIndex;
         long fiftyKEndIndex;
 
-        // Iterator
         fiftyKStartIterator = Calendar.getInstance().getTimeInMillis();
-        Iterator<Integer> itFiftyK = fiftyK.iterator();
-        int a = itFiftyK.next();
+        Iterator<Integer> itFiftyK = fiftyK.iterator();  // Interator
+        while (itFiftyK.hasNext()) {
+            int a = itFiftyK.next();
+        }
         fiftyKEndIterator = Calendar.getInstance().getTimeInMillis();
         System.out.println("\n50K using Iterator: " + (fiftyKEndIterator - fiftyKStartIterator) + " ms");
         System.out.println("Start: " + fiftyKStartIterator);
         System.out.println("End: " + fiftyKEndIterator);
         System.out.println("fiftyK.size(): " + fiftyK.size());
 
-        // Get(index)
         fiftyKStartIndex = Calendar.getInstance().getTimeInMillis();
-        for (int i = 0; i < fiftyK.size(); i++) {
+        for (int i = 0; i < fiftyK.size(); i++) {  // Get(index)
             int b = fiftyK.get(i);
         }
         fiftyKEndIndex = Calendar.getInstance().getTimeInMillis();
@@ -52,7 +51,6 @@ public class pindelLinkedListTraverse {
         System.out.println("fiftyK.size(): " + fiftyK.size());
         System.out.println("index[0]: " + fiftyK.get(0));
         System.out.println("index[end]: " + fiftyK.get(fiftyK.size() - 1));
-        */
 
         // Create LinkedList and store 500K integers
         LinkedList<Integer> fiveHundredK = new LinkedList<>();
@@ -60,27 +58,26 @@ public class pindelLinkedListTraverse {
             fiveHundredK.add(i);
         }
 
-        // Traverse 500K LinkedList
+        // Traverse 500K LinkedList and output run time data to console
         long fiveHundredKStartIterator;
         long fiveHundredKEndIterator;
         long fiveHundredKStartIndex;
         long fiveHundredKEndIndex;
 
-        // Iterator
         fiveHundredKStartIterator = Calendar.getInstance().getTimeInMillis();
-        Iterator<Integer> itFiveHundredK = fiveHundredK.iterator();
-        int c = itFiveHundredK.next();
+        Iterator<Integer> itFiveHundredK = fiveHundredK.iterator();  // Iterator
+        while (itFiveHundredK.hasNext()) {
+            int c = itFiveHundredK.next();
+        }
         fiveHundredKEndIterator = Calendar.getInstance().getTimeInMillis();
         System.out.println("\n500K using Iterator: " + (fiveHundredKEndIterator - fiveHundredKStartIterator) + " ms");
         System.out.println("Start: " + fiveHundredKStartIterator);
         System.out.println("End: " + fiveHundredKEndIterator);
         System.out.println("fiveHundredK.size(): " + fiveHundredK.size());
 
-        // Get(index)
         fiveHundredKStartIndex = Calendar.getInstance().getTimeInMillis();
-        for (int i = 0; i < fiveHundredK.size(); i++) {
-            //int d = fiveHundredK.get(i);
-            System.out.println(fiveHundredK.get(i));
+        for (int i = 0; i < fiveHundredK.size(); i++) {  // Get(index)
+            int d = fiveHundredK.get(i);
         }
         fiveHundredKEndIndex = Calendar.getInstance().getTimeInMillis();
         System.out.println("\n500K using get(index): " + (fiveHundredKEndIndex - fiveHundredKStartIndex) + " ms");
