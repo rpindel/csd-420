@@ -83,7 +83,7 @@ public class PindelLinkedListTraverse {
         System.out.println("\n500K using get(index): " + (fiveHundredKEndIndex - fiveHundredKStartIndex) + " ms");
         System.out.println("Start: " + fiveHundredKStartIndex);
         System.out.println("End: " + fiveHundredKEndIndex);
-        System.out.println("fivehundred.size(): " + fiveHundredK.size());
+        System.out.println("fivehundredK.size(): " + fiveHundredK.size());
         System.out.println("index[0]: " + fiveHundredK.get(0));
         System.out.println("index[end]: " + fiveHundredK.get(fiveHundredK.size() - 1));
         System.out.println("");
