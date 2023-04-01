@@ -14,7 +14,7 @@
 
 import java.util.*;
 
-public class pindelLinkedListTraverse {
+public class PindelLinkedListTraverse {
     // Main method
     public static void main(String[] args) {   
         // Create LinkedList and store 50K integers
