@@ -24,8 +24,8 @@ public class PindelDedupArrayList {
         System.out.println("The original ArrayList is: ");
         arrayDup.forEach(e -> System.out.print(e + " "));
 
-        //Create new ArrayList and populate it with dedup'd values from 
-        //original ArrayList
+        // Create new ArrayList and populate it with dedup'd values from the
+        // original ArrayList
         ArrayList<Integer> arrayDedup = removeDuplicates(arrayDup);
 
         // Print new ArrayList
@@ -39,6 +39,8 @@ public class PindelDedupArrayList {
         // Create new ArrayList        
         ArrayList<E> arrayDedup = new ArrayList<>();
 
+        // Compare new ArrayList to orignal and add elements that are not currently
+        // present
         for (E element : list) {
             if (!arrayDedup.contains(element)) {
                 arrayDedup.add(element);
