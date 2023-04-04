@@ -1,7 +1,9 @@
 import java.util.*;
 
 public class DBPostCode {
+    // Main method
     public static void main(String[] args) {
+        // Create a LinkedHashMap to serve as a pokedex
         Map<String, String> pokedexInsertion = new LinkedHashMap<>();
         pokedexInsertion.put("001", "Bulbasaur");
         pokedexInsertion.put("002", "Ivysaur");
@@ -9,6 +11,7 @@ public class DBPostCode {
         System.out.println("LinkedHashMap pokedex in Insertion Order: ");
         System.out.println(pokedexInsertion + "\n");
 
+        // Create a new LinkedHashMap to serve as a pokedex to show access ordering
         Map<String, String> pokedexAccess = new LinkedHashMap<>(6, 0.75f, true);
         pokedexAccess.put("001", "Bulbasaur");
         pokedexAccess.put("002", "Ivysaur");
