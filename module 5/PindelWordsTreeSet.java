@@ -16,10 +16,11 @@ public class PindelWordsTreeSet {
     public static void main(String[] args) throws ClassNotFoundException, IOException {
         // Ingest/read text file with words
         try (
-            ObjectInputStream wordsIngress = new ObjectInputStream(new FileInputStream("collection_of_words.txt"));
+            ObjectOutputStream wordsOutput = new ObjectOutputStream(new FileOutputStream("collection_of_words.txt"));
         ) {
-            Set<String> wordsTreeSet = new TreeSet(wordsIngress.readObject());
-
+            Set<String> wordsTreeSet = new TreeSet<>();
+            while (wordsOutput.hasNext()) {
+            }
         }
         // Write words to a TreeSet
         // Output TreeSet in ascending order
