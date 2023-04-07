@@ -10,7 +10,6 @@
 
 import java.util.*;
 import java.io.*;
-import package module 5;
 
 public class PindelWordsTreeSet {
     // Main method
