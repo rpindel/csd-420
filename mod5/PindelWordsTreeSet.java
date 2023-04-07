@@ -6,8 +6,6 @@
  * TreeSet, and then outputs the list of unique words in ascending and 
  * descending order */
 
-
-
 import java.util.*;
 import java.io.*;
 
@@ -15,19 +13,26 @@ public class PindelWordsTreeSet {
     // Main method
     public static void main(String[] args) throws Exception {
         // Ingest/read text file with words
-        File wordFile = new File(".\\collection_of_words.txt");
-        Scanner wordsIngress = new Scanner(wordFile);
-        
-        // Write words to a HashSet and normal TreeSet
+        String file1 = "C:\\Users\\tk78876\\csd\\csd-420\\mod5\\collection_of_words.txt";   
+        File wordFile1 = new File(file1);
+        Scanner wordsIngress1 = new Scanner(wordFile1);
         Set<String> hashSet = new HashSet<>();
-        NavigableSet<String> treeSet = new TreeSet<>();
-        
-        while (wordsIngress.hasNext()) {
-            hashSet.add(wordsIngress.next());
-            treeSet.add(wordsIngress.next());
+        while (wordsIngress1.hasNext()) {
+            hashSet.add(wordsIngress1.next());
         }
 
-        wordsIngress.close();
+        
+        String file2 = "C:\\Users\\tk78876\\csd\\csd-420\\mod5\\collection_of_words.txt";   
+        File wordFile2 = new File(file2);
+        Scanner wordsIngress2 = new Scanner(wordFile2);
+        NavigableSet<String> treeSet = new TreeSet<>();
+        while (wordsIngress2.hasNext()) {
+            treeSet.add(wordsIngress2.next());
+        }
+
+        wordsIngress1.close();
+        wordsIngress2.close();
+
 
         // Output Hashset in standard (non-ordered) order
         System.out.println("\nThe collection_of-words.txt file contains the " + 
@@ -37,7 +42,7 @@ public class PindelWordsTreeSet {
         // Output TreeSet in ascending order
         System.out.println("\nThe collection_of-words.txt file contains the " + 
         "words, in ascending order: ");
-        System.out.println(hashSet);
+        System.out.println(treeSet);
 
         // Create reverse order TreeSet and output
         NavigableSet<String> revTreeSet = treeSet.descendingSet();
