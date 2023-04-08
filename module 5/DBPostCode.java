@@ -23,5 +23,14 @@ public class DBPostCode {
         System.out.println("001 = " + pokedexAccess.get("001"));
         System.out.println("LinkedHashMap pokedex in Access order after entries accessed: ");
         System.out.println(pokedexAccess + "\n");
+
+        NavigableMap<String, String> pokedexTree = new TreeMap<>();
+        pokedexTree.put("002", "Ivysaur");
+        pokedexTree.put("001", "Bulbasaur");
+        pokedexTree.put("003", "Venusaur");
+        System.out.println(pokedexTree);
+
+        NavigableMap<String, String> revPokedexTree = pokedexTree.descendingMap();
+        System.out.println(revPokedexTree);
     }
 }
