@@ -1,4 +1,4 @@
-/* Robin pindel
+/* Robin Pindel
  * Module 6 Bubble Sort Programming Assignment
  * 4/13/2023
  * 
