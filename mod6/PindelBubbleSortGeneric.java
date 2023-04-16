@@ -2,7 +2,7 @@
  * Module 6 Bubble Sort Programming Assignment
  * 4/13/2023
  * 
- * This problem takes two lists - integer and string - and uses a bubble sort to sort them.
+ * This problem takes two lists - Integer and String - and uses a bubble sort to sort them.
  * 
  * References
  * 
@@ -21,18 +21,22 @@ import java.util.*;
 public class PindelBubbleSortGeneric {
     // Main method
     public static void main(String[] args) {
+        // Create Integer list, display, and sort it
         Integer[] listInteger = {151, 001, 150, 004, 133, 010, 007};
         System.out.println("");
         System.out.println("Original Integer list (unsorted): ");
         for (int p = 0; p <listInteger.length; p++) {
             System.out.print(listInteger[p] + " ");
         }
+
         bubbleSort(listInteger);
         System.out.println("");
         System.out.println("\nNew Integer list (sorted): ");
         for (int p = 0; p <listInteger.length; p++) {
             System.out.print(listInteger[p] + " ");
         }
+
+        // Create String list, display it, and sort it
         System.err.println("");
         System.err.println("");
         String[] listString = {"Bulbasaur", "Charmander", "Squirtle", "Pidgey", "Eevee", "Mewtwo", "Mew"};
@@ -41,24 +45,26 @@ public class PindelBubbleSortGeneric {
         for (int p = 0; p <listString.length; p++) {
             System.out.print(listString[p] + " ");
         }
+
         bubbleSort(listString);
         System.out.println("");
         System.out.println("\nNew String list (sorted): ");
         for (int p = 0; p <listString.length; p++) {
             System.out.print(listString[p] + " ");
         }
+
         System.err.println("");
         System.err.println("");
       }
     
     // Comparable interface method
-    // Sort data using this interface - Pokedex numbers in an array?
+    // Sort data using this interface - Pokedex numbers
     public static <E extends Comparable<E>> void bubbleSort(E[] list) {
         bubbleSort(list, (e1, e2) -> e1.compareTo(e2));
     }
 
     // Comaparator interface method
-    // Sort data using this interface - Pokemon names in an array?
+    // Sort data using this interface - Pokemon names
     public static <E> void bubbleSort(E[] list, Comparator<? super E> comparator) {
         boolean nextPassNeeded = true;
 
