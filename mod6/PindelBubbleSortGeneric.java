@@ -18,7 +18,7 @@ import java.util.*;
 public class PindelBubbleSortGeneric {
     // Main method
     public static void main(String[] args) {
-        Integer[] listInteger = {001, 004, 007, 010, 133, 150, 151};
+        Integer[] listInteger = {151, 001, 150, 004, 133, 010, 007};
         bubbleSort(listInteger);
         for (int p = 0; p <listInteger.length; p++) {
             System.out.print(listInteger[p] + " ");
@@ -45,7 +45,7 @@ public class PindelBubbleSortGeneric {
         for (int r = 1; r < list.length && nextPassNeeded; r++) {
             nextPassNeeded = false;
             for (int m = 0; m < list.length - r; m++) {
-                if (list[m] > list[r + m]) {
+                if (comparator.compare(list[m], list[r + m]) > 0) {
                     E temp = list[m];
                     list[m] = list[m + 1];
                     list[m + 1] = temp;
