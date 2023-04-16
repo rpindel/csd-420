@@ -22,19 +22,33 @@ public class PindelBubbleSortGeneric {
     // Main method
     public static void main(String[] args) {
         Integer[] listInteger = {151, 001, 150, 004, 133, 010, 007};
-        bubbleSort(listInteger);
+        System.out.println("");
+        System.out.println("Original Integer list (unsorted): ");
         for (int p = 0; p <listInteger.length; p++) {
             System.out.print(listInteger[p] + " ");
         }
-        System.err.println(" ");
-        System.err.println(" ");
+        bubbleSort(listInteger);
+        System.out.println("");
+        System.out.println("\nNew Integer list (sorted): ");
+        for (int p = 0; p <listInteger.length; p++) {
+            System.out.print(listInteger[p] + " ");
+        }
+        System.err.println("");
+        System.err.println("");
         String[] listString = {"Bulbasaur", "Charmander", "Squirtle", "Pidgey", "Eevee", "Mewtwo", "Mew"};
-        bubbleSort(listString, (s1, s2) -> s1.compareTo(s2));
+        System.out.println("");
+        System.out.println("Original String list (unsorted): ");
         for (int p = 0; p <listString.length; p++) {
             System.out.print(listString[p] + " ");
         }
-        System.err.println(" ");
-        System.err.println(" ");
+        bubbleSort(listString, (s1, s2) -> s1.compareTo(s2));
+        System.out.println("");
+        System.out.println("\nNew String list (sorted): ");
+        for (int p = 0; p <listString.length; p++) {
+            System.out.print(listString[p] + " ");
+        }
+        System.err.println("");
+        System.err.println("");
       }
     
     // Comparable interface method
