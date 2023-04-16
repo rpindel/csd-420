@@ -41,7 +41,7 @@ public class PindelBubbleSortGeneric {
         for (int p = 0; p <listString.length; p++) {
             System.out.print(listString[p] + " ");
         }
-        bubbleSort(listString, (s1, s2) -> s1.compareTo(s2));
+        bubbleSort(listString);
         System.out.println("");
         System.out.println("\nNew String list (sorted): ");
         for (int p = 0; p <listString.length; p++) {
