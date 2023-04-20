@@ -6,16 +6,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Current File",
+            "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}",
-            "vmArgs": "--module-path C:\\JavaFX\\javafx-sdk-19.0.2.1\\lib --add-modules javafx.controls,javafx.fxml"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
-            "name": "Launch App",
+            "name": "PindelMod7JavaFXWithCSS",
             "request": "launch",
             "mainClass": "PindelMod7JavaFXWithCSS.PindelMod7JavaFXWithCSS",
+            "projectName": "csd-420_8ec85438",
             "vmArgs": "--module-path C:\\JavaFX\\javafx-sdk-19.0.2.1\\lib --add-modules javafx.controls,javafx.fxml"
         }
     ]

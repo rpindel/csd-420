@@ -1,9 +1,9 @@
 package PindelMod7JavaFXWithCSS;
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.scene.*;
-import javafx.scene.control.*;
+import javafx.geometry.Insets;
+import javafx.geometry.Insets.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
@@ -12,9 +12,12 @@ public class PindelMod7JavaFXWithCSS extends Application {
     //Override the start method of the Application class
     @Override
     public void start(Stage primaryStage) {
-        HBox hBox = new HBox();
-        Scene scene = new Scene(hBox, 400, 100);
+        HBox hBox = new HBox(5);
+        hBox.setPadding(new Insets(5));
+        Scene scene = new Scene(hBox, 425, 110);
         scene.getStylesheets().add("PindelMod7JavaFXWithCSS.css");
+        System.out.println(getClass().getResource("PindelMod7JavaFXWithCSS.css").toExternalForm());
+
         
         StackPane stackPane1 = new StackPane();
         stackPane1.getStyleClass().add("border");
