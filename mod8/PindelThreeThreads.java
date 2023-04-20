@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 /* Robin Pindel
  * Module 8 Programing Assignment - Three Threads
  * 4/19/2023
@@ -11,6 +7,9 @@ import java.util.concurrent.Executors;
  * References
  */
 
+import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.*;
 
 public class PindelThreeThreads {
