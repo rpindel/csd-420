@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PindelThreeThreads",
+            "request": "launch",
+            "mainClass": "PindelThreeThreads",
+            "projectName": "csd-420_8ec85438"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
