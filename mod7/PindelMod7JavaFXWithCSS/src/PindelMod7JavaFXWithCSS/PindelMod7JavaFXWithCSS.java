@@ -3,7 +3,6 @@ package PindelMod7JavaFXWithCSS;
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.geometry.Insets;
-import javafx.geometry.Insets.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
@@ -14,9 +13,9 @@ public class PindelMod7JavaFXWithCSS extends Application {
     public void start(Stage primaryStage) {
         HBox hBox = new HBox(5);
         hBox.setPadding(new Insets(5));
-        Scene scene = new Scene(hBox, 425, 110);
+        Scene scene = new Scene(hBox, 450, 450);
         scene.getStylesheets().add("PindelMod7JavaFXWithCSS.css");
-        System.out.println(getClass().getResource("PindelMod7JavaFXWithCSS.css").toExternalForm());
+        //System.out.println(getClass().getResource("\\rsc\\PindelMod7JavaFXWithCSS.css").toExternalForm());
 
         
         StackPane stackPane1 = new StackPane();
