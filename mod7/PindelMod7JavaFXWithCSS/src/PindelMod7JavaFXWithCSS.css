@@ -1,3 +1,11 @@
+/* Robin Pindel
+ * Module 7 Programming Assignment
+ * 4/23/2023
+
+ * CSS stylesheet for program that displays four JavaFX circles.
+ */
+
+
 .plaincircle {
   -fx-fill: white;
   -fx-stroke: black;
