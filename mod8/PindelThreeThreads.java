@@ -2,7 +2,7 @@
  * Module 8 Programing Assignment - Three Threads
  * 4/19/2023
  * 
- * This program does ...
+ * This program creates arrays of characters and then uses threads to display elements from those arrays a defined number of times
  * 
  * References
  */
@@ -15,6 +15,7 @@ import java.util.*;
 public class PindelThreeThreads {
     //Main method
     public static void main(String[] args) {
+        // Create threadpool and execute the user-defined classes as concurrent threads
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         executor.execute(new PrintAlpha(10000));
@@ -25,10 +26,12 @@ public class PindelThreeThreads {
     }
     
 }
+// User-defined class that creates an array of alphabet characters and provides a method to randomly display a character
 class PrintAlpha implements Runnable {
     private int times;
     private ArrayList<Character> charsList = new ArrayList<>(
-        Arrays.asList('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'));
+        Arrays.asList('a','b','c','d','e','f','g','h','i','j','k','l','m',
+        'n','o','p','q','r','s','t','u','v','w','x','y','z'));
 
     public PrintAlpha(int t) {
         times = t;
@@ -42,7 +45,7 @@ class PrintAlpha implements Runnable {
         }  
     }
 }
-
+// User-defined class that creates an array of numeric characters and provides a method to randomly display a character
 class PrintNumeric implements Runnable {
     private int times;
     
@@ -58,12 +61,12 @@ class PrintNumeric implements Runnable {
         }  
     }
 }
-
+// User-defined class that creates an array of symbol characters and provides a method to randomly display a character
 class PrintSymbol implements Runnable {
     private int times;
     private ArrayList<Character> symbolList = new ArrayList<>(
-        Arrays.asList('!','@','#','$','%','^','&','*','(',')','{','}','[',']','|','\\','<','>','/','?'));
-
+        Arrays.asList('!','@','#','$','%','^','&','*','(',')','{','}',
+        '[',']','|','\\','<','>','/','?'));
 
     public PrintSymbol(int t) {
         times = t;
