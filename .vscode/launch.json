@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Select5",
+            "request": "launch",
+            "mainClass": "Select5",
+            "projectName": "csd-420_8ec85438"
+        },
+        {
+            "type": "java",
+            "name": "InsertData",
+            "request": "launch",
+            "mainClass": "InsertData",
+            "projectName": "csd-420_8ec85438"
+        },
+        {
+            "type": "java",
+            "name": "CreateTable",
+            "request": "launch",
+            "mainClass": "CreateTable",
+            "projectName": "csd-420_8ec85438"
+        },
+        {
+            "type": "java",
+            "name": "JDBCMySQLVersion",
+            "request": "launch",
+            "mainClass": "JDBCMySQLVersion",
+            "projectName": "csd-420_8ec85438"
+        },
+        {
+            "type": "java",
             "name": "PindelThreeThreads",
             "request": "launch",
             "mainClass": "PindelThreeThreads",
