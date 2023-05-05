@@ -14,15 +14,18 @@ import javafx.scene.control.*;
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import javafx.scene.shape.*;
 import java.sql.*;
-
-import javax.swing.plaf.synth.SynthStyleFactory;
 
 public class PindelMod10DatabaseProgram extends Application {
     private Statement stmt;
-    private TextField userIDEntry = new TextField();
-    private Label tableResults = new Label();
+    TextField userIDEntryDisplay = new TextField();
+    TextField userIDEntryUpdate = new TextField();
+    TextField changeTeamTextField = new TextField(); 
+    private Label tableResults1 = new Label();
+    private Label tableResults2 = new Label();
+    private Label idLabel1 = new Label("Please enter a 3-digit ID: ");
+    private Label idLabel2 = new Label("Please enter a 3-digit ID: ");
+    private Label updateLabel = new Label("Please enter the new team value: ");
 
     //Override the start method of the Application class
     @Override
@@ -31,19 +34,28 @@ public class PindelMod10DatabaseProgram extends Application {
                
         Button displayButton = new Button("Display Record");
         Button updateButton = new Button("Update Record");
+       
+        VBox vBoxDisplay = new VBox(5);
+        VBox vBoxUpdate = new VBox(5);
+        vBoxDisplay.getChildren().addAll(idLabel1, userIDEntryDisplay, displayButton);
+        vBoxUpdate.getChildren().addAll(idLabel2, userIDEntryUpdate, updateLabel, changeTeamTextField, updateButton);
+        
         HBox buttonHBox = new HBox(5);
         buttonHBox.setPadding(new Insets(5));
-        buttonHBox.getChildren().addAll(new Label ("Please enter a 3-digit ID"), userIDEntry, displayButton, updateButton);
+        buttonHBox.getChildren().addAll(vBoxDisplay, vBoxUpdate);
         
-        VBox vBox = new VBox(5);
-        vBox.setPadding(new Insets(5));
-        vBox.getChildren().addAll(buttonHBox, tableResults);
+        VBox vBoxMain = new VBox(5);
+        vBoxMain.setPadding(new Insets(5));
+        vBoxMain.getChildren().addAll(tableResults1, tableResults2, buttonHBox);
 
-        userIDEntry.setPrefColumnCount(3);
+        userIDEntryDisplay.setPrefColumnCount(3);
+        userIDEntryUpdate.setPrefColumnCount(3);
+        tableResults1.setStyle("-fx-font-weight: bold;");
+        tableResults2.setStyle("-fx-font-weight: bold;");
         displayButton.setOnAction(e -> displayFavoriteTeam());
         updateButton.setOnAction(e -> updateFavoriteTeam());
     
-        Scene scene = new Scene(vBox, 450, 100);
+        Scene scene = new Scene(vBoxMain, 400, 200);
         primaryStage.setTitle("Database UI");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -64,20 +76,20 @@ public class PindelMod10DatabaseProgram extends Application {
     }
 
     private void displayFavoriteTeam() {
-        String id = userIDEntry.getText();
+        String id = userIDEntryDisplay.getText();
         try {
-            String queryString = "select favoriteteam from Fans " +
+            String displayValueQueryString = "select favoriteteam from Fans " +
                 "where id = '" + id + "'";
-            System.out.println(queryString);
+            System.out.println(displayValueQueryString);
             
-            ResultSet resultSet = stmt.executeQuery(queryString);
+            ResultSet resultSet = stmt.executeQuery(displayValueQueryString);
 
             if (resultSet.next()) {
                 String favoriteTeam = resultSet.getString(1);
-                tableResults.setText("The favorite team of ID: " + id + " is the " + favoriteTeam + ".");
+                tableResults1.setText("The favorite team of ID: " + id + " is the " + favoriteTeam + ".");
             }
             else {
-                tableResults.setText("ID not found.");
+                tableResults1.setText("ID not found.  Please review entered value.");
             }
         }
         catch (SQLException ex) {
@@ -86,7 +98,55 @@ public class PindelMod10DatabaseProgram extends Application {
     }
 
     private void updateFavoriteTeam() {
-        String id = userIDEntry.getText();
+        String id = userIDEntryUpdate.getText();
+        String team = changeTeamTextField.getText();
+        try {
+            String oldValueQueryString = "select favoriteteam from Fans " +
+            "where id = '" + id + "'";
+            System.out.println(oldValueQueryString);
+            
+            ResultSet resultSet = stmt.executeQuery(oldValueQueryString);
+
+            if (resultSet.next()) {
+                String favoriteTeam = resultSet.getString(1);
+                tableResults1.setText("The current favorite team of ID: " + id + " is the " + favoriteTeam + ".");
+                tableResults2.setText(null);
+            }
+            else {
+                tableResults1.setText("ID not found.  Please review entered value.");
+            }
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        try {
+            String updateValueQueryString = "update fans \nset favoriteteam = '" + team + "'"
+                + "\nwhere id = '" + id + "'";
+            System.out.println(updateValueQueryString);
+
+            stmt.executeUpdate(updateValueQueryString);
+            System.out.println("Update complete");
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            String newValueQueryString = "select favoriteteam from Fans " +
+            "where id = '" + id + "'";
+            System.out.println(newValueQueryString);
+            
+            ResultSet resultSet = stmt.executeQuery(newValueQueryString);
+
+            while (resultSet.next()) {
+                String favoriteTeam = resultSet.getString(1);
+                tableResults2.setText("The new favorite team of ID: " + id + " is the " + favoriteTeam + ".");
+            }
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     //Main method since I am using VSCode
