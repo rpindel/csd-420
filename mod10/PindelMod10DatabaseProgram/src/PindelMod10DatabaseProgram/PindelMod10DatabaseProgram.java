@@ -13,6 +13,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.sql.*;
 
@@ -21,8 +22,8 @@ public class PindelMod10DatabaseProgram extends Application {
     TextField userIDEntryDisplay = new TextField();
     TextField userIDEntryUpdate = new TextField();
     TextField changeTeamTextField = new TextField(); 
-    private Label tableResults1 = new Label();
-    private Label tableResults2 = new Label();
+    private Text tableResults1 = new Text();
+    private Text tableResults2 = new Text();
     private Label idLabel1 = new Label("Please enter a 3-digit ID: ");
     private Label idLabel2 = new Label("Please enter a 3-digit ID: ");
     private Label updateLabel = new Label("Please enter the new team value: ");
@@ -87,6 +88,7 @@ public class PindelMod10DatabaseProgram extends Application {
             if (resultSet.next()) {
                 String favoriteTeam = resultSet.getString(1);
                 tableResults1.setText("The favorite team of ID: " + id + " is the " + favoriteTeam + ".");
+                tableResults2.setText(null);
             }
             else {
                 tableResults1.setText("ID not found.  Please review entered value.");
@@ -110,7 +112,6 @@ public class PindelMod10DatabaseProgram extends Application {
             if (resultSet.next()) {
                 String favoriteTeam = resultSet.getString(1);
                 tableResults1.setText("The current favorite team of ID: " + id + " is the " + favoriteTeam + ".");
-                tableResults2.setText(null);
             }
             else {
                 tableResults1.setText("ID not found.  Please review entered value.");
