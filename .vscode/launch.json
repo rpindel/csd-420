@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PindelMod10DatabaseProgram",
+            "request": "launch",
+            "mainClass": "PindelMod10DatabaseProgram.PindelMod10DatabaseProgram",
+            "projectName": "csd-420_8ec85438",
+            "vmArgs": "--module-path C:\\JavaFX\\javafx-sdk-19.0.2.1\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Select5",
             "request": "launch",
             "mainClass": "Select5",
